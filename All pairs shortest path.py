@@ -65,22 +65,15 @@ print("\nPERFECTLY WORKING SYSTEM:")
 transmit_msg(4, sensor_locations)
 
 #consider sensor 3 as faulty. Hence,there will be no paths from sensor 3.Thus, the sensor_location matrix will change as follows:
-sensor_locations = [
-            [0,   4,   4,  INF ],
-            [4,   0,   5,  9   ],
-            [INF, INF, INF,INF],
-            [INF, INF, 3,  0]
-        ]
+sensor_locations[2][0]=INF
+sensor_locations[2][1]=INF
+sensor_locations[2][2]=INF
+sensor_locations[2][3]=INF
 print("\nFOR THE SYSTEM WITH FAULTY SENSOR:")
 transmit_msg(4, sensor_locations)
 
 #consider any edge,say from sensor 2 to sensor 4 as faulty. Hence,there will be no path from sensor 2 to 4.
 # Thus, the sensor_location matrix will change as follows:
-sensor_locations = [
-            [0,   4,   4,  INF ],
-            [4,   0,   5,  INF   ],
-            [6, 2, 0,INF],
-            [INF, INF, 3,  0]
-        ]
+sensor_locations[1][3]=INF
 print("\nFOR THE SYSTEM WITH FAULTY EDGE:")
 transmit_msg(4, sensor_locations)
